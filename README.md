@@ -10,6 +10,9 @@ The global idea is the following :
 - Create clusters of neighbors for each joint in both keypoints
 - Align one keypoint to the other using each subset of the pointcloud as if they were matching in each pointcloud
 
+# Installation
+`pip install -e .`
+
 # Usage
 Every data structure is in the `structures` module.  
 In `isp/config.py`, add your checkpoints folder path. It should contain checkpoints for [YOLO](https://docs.ultralytics.com/models/yolov8/) pose and segmentation models.  
