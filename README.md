@@ -1,6 +1,7 @@
 # ISP : Iterative Smartest Point
 
 # Introduction
+This idea came from some recordings I had, without any extrinsic calibration. While I think it's fun to align pointclouds by hand (it isn't), ICP wasn't working so well for some specific cases.
 Please note that this slightly overengineered alignment method only works with 2 RGBD cameras and only one person in both frames.
 
 The global idea is the following :
