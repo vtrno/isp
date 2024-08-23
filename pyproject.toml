@@ -7,7 +7,7 @@ only-include = ["isp"]
 
 [project]
 name = "isp"
-version = "1.0"
+version = "1.1"
 dependencies = [
     "open3d==0.17.0",
     "pytorch3d==0.7.7",

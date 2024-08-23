@@ -7,16 +7,6 @@ from ultralytics import YOLO
 from yacs.config import CfgNode
 
 
-def read_data(datafile:str) -> dict:
-    out = {}
-    data = np.load(datafile)
-    for k in data.keys():
-        if isinstance(data[k].dtype, np.float64):
-            out[k] = data[k].astype(np.float32)
-        else:
-            out[k] = data[k]
-    return out
-
 class DataProcessor():
     def __init__(self, config:CfgNode) -> None:
         # ? Find checkpoints

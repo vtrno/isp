@@ -18,6 +18,8 @@ class RGBDFrame():
     def K(self):
         return self._K
     
+    def as_dict(self):
+        return {'image':self.image, 'depth':self.depth, 'K':self.K}
 
 class DualKinectFrameStack():
     def __init__(self, K_0:np.ndarray, K_1:np.ndarray) -> None:
@@ -40,6 +42,11 @@ class DualKinectFrameStack():
     @property
     def frames(self):
         return self._frames
+    
+    def get(self, frame_idx:int):
+        if frame_idx >= len(self.frames):
+            raise ValueError('Frame number must not exceed sequence length')
+        return self.frames[frame_idx]
     
     def __repr__(self):
         return 'Framestack with %d frames'%len(self._frames)

@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import Union
 
 import numpy as np
@@ -61,7 +62,7 @@ def process_dual_cam(frame_0:structures.RGBDFrame, frame_1:structures.RGBDFrame,
         pbar.set_description(str(round(loss.item(), 5)))
         if loss.item() < best_loss:
             best_loss = loss.item()
-            best_params = model.state_dict()
+            best_params = deepcopy(model.state_dict())
         
         if abs(loss.item() - previous_loss) < cfg.PROCESSING.EPSILON:
             print('Plateau reached, early stopping.')
@@ -85,7 +86,7 @@ def process_dual_cam(frame_0:structures.RGBDFrame, frame_1:structures.RGBDFrame,
         pbar.set_description(str(round(loss.item(), 5)))
         if loss.item() < best_loss:
             best_loss = loss.item()
-            best_params = model.state_dict()
+            best_params = deepcopy(model.state_dict())
         
         if abs(loss.item() - previous_loss) < cfg.PROCESSING.EPSILON:
             print('Plateau reached, early stopping.')
