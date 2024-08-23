@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ISP"
+name = "isp"
 version = "1.0"
 dependencies = [
     "open3d==0.17.0",
@@ -13,18 +13,17 @@ dependencies = [
     "roma==1.5.0",
     "torch==1.13.1",
     "tqdm==4.64.1",
-    "tqdm==4.66.5",
     "ultralytics==8.0.145",
     "yacs==0.1.8"
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.7"
 authors = [
   {name = "vtrno"},
 ]
 
 description = "ISP : overengineer camera extrinsic calibration with a human in the frame"
 readme = "README.md"
-license = {file = "LICENSE.txt"}
+license = {file = "LICENSE"}
 keywords = ["ICP", "kinect"]
 classifiers = [
   "Programming Language :: Python"
